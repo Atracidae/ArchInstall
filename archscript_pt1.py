@@ -23,11 +23,11 @@ os.system(f"mkfs.ext4 {partition_root}")
 
 # Make Directories.
 os.system("mkdir /mnt/boot")
-os.system(f"mkdir {boot_dir}")
+os.system("mkdir /mnt/boot/efi")
 
 # Mount partitions to proper directories.
 os.system(f"mount {partition_root} /mnt")
-os.system(f"mount {partition_boot} {boot_dir}")
+os.system(f"mount {partition_boot} /mnt/boot/efi")
 
 
 # Inform User of progress.
