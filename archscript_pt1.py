@@ -11,7 +11,7 @@ start = time.time()
 # Variables.
 partition_root = '/dev/sdc2'
 partition_boot = '/dev/sdc1'
-boot_dir = '/mnt/boot/EFI'
+boot_dir = '/mnt/boot/efi'
 
 # Some initial settings and starting up cfdisk.
 os.system("timedatectl set-ntp true")
