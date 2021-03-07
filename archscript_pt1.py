@@ -13,6 +13,10 @@ partition_root = '/dev/sdc2'
 partition_boot = '/dev/sdc1'
 boot_dir = '/mnt/boot/efi'
 
+# Make Directories.
+os.system("mkdir /mnt/boot")
+os.system("mkdir /mnt/boot/efi")
+
 # Some initial settings and starting up cfdisk.
 os.system("timedatectl set-ntp true")
 os.system("cfdisk /dev/sdc")
@@ -21,9 +25,6 @@ os.system("cfdisk /dev/sdc")
 os.system(f"mkfs.fat -F32 {partition_boot}")
 os.system(f"mkfs.ext4 {partition_root}")
 
-# Make Directories.
-os.system("mkdir /mnt/boot")
-os.system("mkdir /mnt/boot/efi")
 
 # Mount partitions to proper directories.
 os.system(f"mount {partition_root} /mnt")
@@ -36,7 +37,7 @@ print('Sleeping for 3 seconds.')
 time.sleep(3)
 
 # Download and Write base to disk.
-os.system("pacstrap /mnt base")
+#os.system("pacstrap /mnt base")
 os.system("genfstab -U /mnt >> /mnt/etc/fstab")
 
 # Copy downloaded git contents to new home directory for use after arch-chroot.
