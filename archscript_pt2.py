@@ -10,19 +10,19 @@ import time
 def locale():
     """ hmm """
     conf_list = [
-        'LANG=en_US.UTF-8',  # noqa
-        'LC_CTYPE=en_US.UTF-8',  # noqa
-        'LC_NUMERIC=en_US.UTF-8',  # noqa
-        'LC_TIME=en_US.UTF-8',  # noqa
-        'LC_COLLATE=en_US.UTF-8',  # noqa
-        'LC_MONETARY=en_US.UTF-8',  # noqa
-        'LC_MESSAGES="en_US.UTF-8"',  # noqa
-        'LC_PAPER="en_US.UTF-8"',  # noqa
-        'LC_NAME="en_US.UTF-8"',  # noqa
-        'LC_ADDRESS="en_US.UTF-8"',  # noqa
-        'LC_TELEPHONE="en_US.UTF-8"',  # noqa
-        'LC_MEASUREMENT=en_GB.UTF-8',  # noqa
-        'LC_IDENTIFICATION="en_US.UTF-8"',  # noqa
+        'LANG=en_US.UTF-8\n',  # noqa
+        'LC_CTYPE=en_US.UTF-8\n',  # noqa
+        'LC_NUMERIC=en_US.UTF-8\n',  # noqa
+        'LC_TIME=en_US.UTF-8\n',  # noqa
+        'LC_COLLATE=en_US.UTF-8\n',  # noqa
+        'LC_MONETARY=en_US.UTF-8\n',  # noqa
+        'LC_MESSAGES="en_US.UTF-8"\n',  # noqa
+        'LC_PAPER="en_US.UTF-8"\n',  # noqa
+        'LC_NAME="en_US.UTF-8"\n',  # noqa
+        'LC_ADDRESS="en_US.UTF-8"\n',  # noqa
+        'LC_TELEPHONE="en_US.UTF-8"\n',  # noqa
+        'LC_MEASUREMENT=en_GB.UTF-8\n',  # noqa
+        'LC_IDENTIFICATION="en_US.UTF-8"\n',  # noqa
         'LC_ALL=',  # noqa
     ]
     locale_gen_file = "/etc/locale.gen"
