@@ -50,33 +50,16 @@ def net():
 
 def install_packages():
     package_list = [
-        'linux',
-        'linux-headers',
-        'linux-firmware',
+        'linux linux-headers linux-firmware',
         'python3',
-        'dhcpcd',
-        'grub',
-        'efibootmgr',
-        'git',
-        'sudo',
-        'nano',
-        'vim',
-        'vi',
-        'man',
-        'amd-ucode',
-        'mesa',
-        'nvidia',
-        'nvidia-utils',
-        'base-devel',
-        'networkmgr',
-        'wpa_supplicant',
-        'wireless_tools',
-        'netctl',
-        'dialog',
+        'dhcpcd grub efibootmgr git',
+        'sudo nano vim vi man',
+        'amd-ucode mesa nvidia nvidia-utils base-devel',
+        'networkmgr wpa_supplicant wireless_tools netctl dialog',
     ]
 
-    for package in package_list:
-        os.system(f'pacman -S {package}')
+    for packages in package_list:
+        os.system(f'pacman -S {packages}')
 
 
     os.system("systemctl enable dhcpcd")
@@ -84,12 +67,6 @@ def install_packages():
 
     # If installing linux and linux-lts, running this command once for each instance of kernel is needed.
     os.system("mkinitcpio -p linux")
-
-def grub():
-    os.system("grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck")
-    os.system('mkdir /boot/grub/locale')
-    os.system(r'cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo')
-    os.system(r'grub-mkconfig -o /boot/grub/grub.cfg')
 
 def create_users():
     # Create passwd for root.
@@ -105,6 +82,14 @@ def create_users():
     print('enter pw for alpha')
     os.system('useradd -m -g users -G wheel alpha')
     os.system('passwd alpha')
+
+def grub():
+    os.system("grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck")
+    os.system('mkdir /boot/grub/locale')
+    os.system(r'cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo')
+    os.system(r'grub-mkconfig -o /boot/grub/grub.cfg')
+
+
 
 
 
