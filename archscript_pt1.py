@@ -42,7 +42,7 @@ print('Sleeping for 3 seconds.')
 time.sleep(3)
 
 # Download and Write base to disk.
-os.system("pacstrap /mnt base")
+os.system("pacstrap /mnt base python")
 os.system("genfstab -U /mnt >> /mnt/etc/fstab")
 
 # Copy downloaded git contents to new home directory for use after arch-chroot.
