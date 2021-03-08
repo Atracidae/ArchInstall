@@ -1,0 +1,111 @@
+{
+    "window.titleBarStyle": "custom",
+
+    "workbench.colorCustomizations": {
+
+        //** Base Colors **\\
+        "foreground": "#838f15",
+
+        // "focusBorder": "#8f1515",
+
+        //** Activity Bar **//
+        "activityBar.background": "#000000",
+        "activityBar.foreground": "#1a770e",
+        "sideBar.foreground": "#077416",
+        "sideBar.background": "#000000",
+        "sideBar.border": "#04360a",
+        "sideBarTitle.foreground": "#756509",
+        "sideBarSectionHeader.foreground": "#756509",
+        "sideBarSectionHeader.border": "#756509",
+        
+        //** Editor Colors **\\
+        "editor.background": "#000000",
+        "editorLineNumber.foreground": "#084412",
+        "editorCursor.foreground": "#ffd900",
+        "editor.selectionBackground": "#151247",
+        "editor.lineHighlightBackground": "#0a091f",
+        // Color for regions with the same content as the selection. The color must not be opaque so as not to hide underlying decorations.
+        "editor.selectionHighlightBackground": "#0f0d2e",  
+        "editor.selectionHighlightBorder": "#0f0d2e",
+
+        //** Editor Groups and Tabs **\\
+        "tab.border": "#0a2c0a",
+        "editorGroupHeader.tabsBackground": "#000000",
+        "tab.activeBackground": "#0c0c03",
+        "tab.activeForeground": "#bead0b",
+        "tab.inactiveBackground": "#000000",
+
+
+    },
+
+    //** Code Coloring  **\\
+    "editor.tokenColorCustomizations": {
+        "[Abyss]": {
+            "textMateRules": [
+
+                //** Rule Set 1 Comments **\\
+                {
+                    "scope": [
+                        "punctuation.definition.comment",
+                        "comment.block",
+                        "comment.line",
+                        "comment.block.documentation"
+                    ],
+                    "settings": {
+                        "foreground": "#8a5f02"
+                    }
+                },
+
+                //** Rule Set 2 Settings File, Current Location**\\
+                {
+                    "scope": [
+                        "support.type.property-name.json.comments",
+             
+
+                    ],
+                    "settings": {
+                        "foreground": "#c75a00"
+                    }
+                },
+
+                //** Rule Set 3 Operators **\\
+                {
+                    "scope": [
+
+                        "keyword.operator.arithmetic.js",
+
+                    ],
+                    "settings": {
+                        "foreground": "#c75a00d7"
+                    }
+                },
+                
+                //** Rule Set 2 Testing**\\
+                {
+                    "scope": [
+                        "function.whothefuckknows",
+                        "entity.name.tag.html",
+
+                    ],
+                    "settings": {
+                        "foreground": "#c75a00"
+                    }
+                },
+            ],
+        },
+    },
+
+    "workbench.settings.openDefaultKeybindings": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Abyss",
+
+    // Controls the font family.
+    // "editor.fontFamily": "Operator Mono",
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    // "editor.lineHeight": 18,
+    // Enables font ligatures
+    // "editor.fontLigatures": true,
+    // Controls if file decorations should use badges.
+    // "explorer.decorations.badges": false
+}
+
