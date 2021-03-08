@@ -105,7 +105,7 @@ if __name__ == '__main__':
     install_packages()
     create_users()
     grub()
-
+    os.system('rm ArchInstall /mnt/home/ -r')
 
     print("\n\nFinished!\nPlease remove installation media and restart.")
 
