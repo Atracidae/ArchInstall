@@ -9,34 +9,9 @@ import time
 
 def locale():
     """ hmm """
-    conf_list = [
-        'LANG=en_US.UTF-8\n',  # noqa
-        'LC_CTYPE=en_US.UTF-8\n',  # noqa
-        'LC_NUMERIC=en_US.UTF-8\n',  # noqa
-        'LC_TIME=en_US.UTF-8\n',  # noqa
-        'LC_COLLATE=en_US.UTF-8\n',  # noqa
-        'LC_MONETARY=en_US.UTF-8\n',  # noqa
-        'LC_MESSAGES="en_US.UTF-8"\n',  # noqa
-        'LC_PAPER="en_US.UTF-8"\n',  # noqa
-        'LC_NAME="en_US.UTF-8"\n',  # noqa
-        'LC_ADDRESS="en_US.UTF-8"\n',  # noqa
-        'LC_TELEPHONE="en_US.UTF-8"\n',  # noqa
-        'LC_MEASUREMENT=en_GB.UTF-8\n',  # noqa
-        'LC_IDENTIFICATION="en_US.UTF-8"\n',  # noqa
-        'LC_ALL=',  # noqa
-    ]
-    locale_gen_file = "/etc/locale.gen"
-    locale_conf_file = "/etc/locale.conf"
+
     os.system("ln -sf /usr/share/zoneinfo/America/New_York")
     os.system("hwclock --systohc")
-    os.system(f'rm {locale_gen_file}')
-    os.system(f'rm {locale_conf_file}')
-    os.system(f'cp locale.gen {locale_gen_file}')
-    os.system("locale-gen")
-    os.system(f'touch {locale_conf_file}')
-    with open(locale_conf_file, 'w') as file:
-        for i in conf_list:
-            file.write(i)
 
 def net():
 
@@ -49,16 +24,16 @@ def net():
         f4.write(f"127.0.1.1     {host_name}.localdomain    {host_name}")
 
 def install_packages():
-    package_list = [
+    packages_list = [
         'linux linux-headers linux-firmware',
-        'python3',
+        'awesome xorg-xinitrc',
         'dhcpcd grub efibootmgr git',
         'sudo nano vim vi man',
         'amd-ucode mesa nvidia nvidia-utils base-devel',
         'networkmgr wpa_supplicant wireless_tools netctl dialog',
     ]
 
-    for packages in package_list:
+    for packages in packages_list:
         os.system(f'pacman -S {packages}')
 
 
@@ -88,12 +63,6 @@ def grub():
     os.system('mkdir /boot/grub/locale')
     os.system(r'cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo')
     os.system(r'grub-mkconfig -o /boot/grub/grub.cfg')
-
-
-
-
-
-
 
 if __name__ == '__main__':
     print('Starting in .5')
